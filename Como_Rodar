@@ -1,0 +1,29 @@
+Para rodar o código em Python que você forneceu, você precisa seguir os seguintes passos:
+
+1. Instalar as bibliotecas `pyodbc` e `paramiko` se ainda não estiverem instaladas. Você pode instalá-las usando o pip:
+
+   ```
+   pip install pyodbc paramiko
+   ```
+
+2. Preencher os parâmetros necessários com os valores apropriados. Certifique-se de fornecer os seguintes valores:
+
+   - `ssh_host`: O endereço IP do servidor SSH.
+   - `ssh_username`: O nome de usuário de conexão SSH.
+   - `ssh_private_key_path`: O caminho para sua chave privada RSA.
+   - `sql_server_host`: O endereço IP do servidor SQL Server.
+   - `sql_server_database`: O nome do banco de dados do SQL Server.
+   - `sql_server_username`: O nome de usuário para autenticação no SQL Server.
+   - `sql_server_password`: A senha do usuário para autenticação no SQL Server (ou você pode remover essa linha se desejar usar autenticação do Windows).
+
+3. Certifique-se de que a chave privada RSA esteja no caminho especificado em `ssh_private_key_path`.
+
+4. Depois de preencher todos os parâmetros necessários, você pode executar o código. Basta copiar e colar o código em um arquivo Python (por exemplo, `conexao_sql_ssh.py`) e executá-lo usando o interpretador Python:
+
+   ```
+   python conexao_sql_ssh.py
+   ```
+
+O código irá estabelecer uma conexão SSH, criar um túnel SSH para encaminhar a porta do SQL Server e, em seguida, conectar-se ao SQL Server através desse túnel para executar uma consulta SQL. Os resultados da consulta serão impressos na tela.
+
+Certifique-se de que os parâmetros estejam corretos e que seu ambiente tenha acesso ao servidor SSH e ao servidor SQL Server antes de executar o código.
